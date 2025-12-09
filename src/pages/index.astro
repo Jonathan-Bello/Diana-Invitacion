@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { Image } from "astro:assets";
 import img1 from "../assets/carousel/1.jpg";
 import img2 from "../assets/carousel/2.jpg";
 import img3 from "../assets/carousel/3.jpg";
@@ -7,8 +8,10 @@ import img4 from "../assets/carousel/4.jpg";
 import img5 from "../assets/carousel/5.jpg";
 import img6 from "../assets/carousel/6.jpg";
 import img7 from "../assets/carousel/7.jpg";
+import img8 from "../assets/carousel/8.jpg";
+import img9 from "../assets/carousel/9.jpg";
 
-const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
+const carouselImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 ---
 
 <html lang="es">
@@ -26,18 +29,32 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
-  <body class="bg-[#FAF7F2] text-gray-800">
+  <body class="text-gray-800 theme-background">
     <!-- Hero Section -->
     <section
       class="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       <!-- Decorative golden elements -->
       <div
-        class="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-amber-400/20 to-transparent rounded-full blur-3xl"
+        class="absolute top-0 left-0 w-64 h-64 rounded-full blur-3xl"
+        style="
+          background: radial-gradient(
+            circle at 30% 30%,
+            rgba(var(--color-primary-rgb), 0.2),
+            transparent 65%
+          );
+        "
       >
       </div>
       <div
-        class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-amber-300/20 to-transparent rounded-full blur-3xl"
+        class="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl"
+        style="
+          background: radial-gradient(
+            circle at 70% 70%,
+            rgba(var(--color-primary-strong-rgb), 0.18),
+            transparent 65%
+          );
+        "
       >
       </div>
 
@@ -45,7 +62,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
         <!-- Decorative leaves top -->
         <div class="mb-8 opacity-0 animate-fade-in">
           <svg
-            class="w-32 h-32 mx-auto text-amber-500"
+            class="w-32 h-32 mx-auto theme-text-primary"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -58,26 +75,27 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
         <!-- Main content -->
         <div class="max-w-4xl mx-auto space-y-6 opacity-0 animate-fade-in-up">
           <h1
-            class="font-serif text-6xl md:text-8xl text-amber-600 mb-4"
+            class="font-serif text-6xl md:text-8xl theme-text-strong mb-4"
             style="font-family: 'Cormorant Garamond', serif;"
           >
             Fiesta de Graduación
           </h1>
           <p
-            class="text-3xl md:text-4xl text-gray-700 mb-2"
+            class="text-3xl md:text-4xl theme-text-muted mb-2"
             style="font-family: 'Cormorant Garamond', serif; font-style: italic;"
           >
             y Cumpleaños
           </p>
           <h2
-            class="text-5xl md:text-7xl font-bold text-amber-700 my-8"
+            class="text-5xl md:text-7xl font-bold theme-text-contrast my-8"
             style="font-family: 'Cormorant Garamond', serif;"
           >
             DIANA LAURA
           </h2>
 
           <div
-            class="w-32 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto my-8"
+            class="w-32 h-1 mx-auto my-8"
+            style="background: linear-gradient(to right, transparent, var(--color-primary), transparent);"
           >
           </div>
 
@@ -94,7 +112,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
         <!-- Decorative leaves bottom -->
         <div class="mt-12 opacity-0 animate-fade-in-delayed">
           <svg
-            class="w-24 h-24 mx-auto text-amber-500 transform rotate-180"
+            class="w-24 h-24 mx-auto theme-text-primary transform rotate-180"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -109,7 +127,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
           class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce"
         >
           <svg
-            class="w-8 h-8 text-amber-600"
+            class="w-8 h-8 theme-text-strong"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -125,15 +143,22 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
     </section>
 
     <!-- Event Details Section -->
-    <section class="py-20 bg-white relative overflow-hidden">
+    <section class="py-20 theme-surface relative overflow-hidden">
       <div
-        class="absolute top-0 right-0 w-64 h-64 bg-amber-100 rounded-full blur-3xl opacity-50"
+        class="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl opacity-50"
+        style="
+          background: radial-gradient(
+            circle at 70% 30%,
+            rgba(var(--color-primary-rgb), 0.16),
+            transparent 70%
+          );
+        "
       >
       </div>
 
       <div class="container mx-auto px-4 relative z-10">
         <h2
-          class="text-5xl md:text-6xl text-center text-amber-700 mb-16 font-serif scroll-reveal"
+          class="text-5xl md:text-6xl text-center theme-text-contrast mb-16 font-serif scroll-reveal"
           style="font-family: 'Cormorant Garamond', serif;"
         >
           Detalles del Evento
@@ -142,10 +167,11 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
         <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
           <!-- Date -->
           <div
-            class="text-center scroll-reveal bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            class="text-center scroll-reveal theme-surface-soft p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
           >
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-amber-500 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              style="background-color: var(--color-primary);"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -162,23 +188,24 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
               </svg>
             </div>
             <h3
-              class="text-3xl font-serif text-amber-800 mb-4"
+              class="text-3xl font-serif theme-text-contrast mb-4"
               style="font-family: 'Cormorant Garamond', serif;"
             >
               Fecha
             </h3>
-            <p class="text-5xl font-bold text-amber-600 mb-2">13</p>
-            <p class="text-2xl text-gray-700">Diciembre</p>
+            <p class="text-5xl font-bold theme-text-strong mb-2">13</p>
+            <p class="text-2xl theme-text-muted">Diciembre</p>
             <p class="text-xl text-gray-600 mt-2">Sábado</p>
           </div>
 
           <!-- Time -->
           <div
-            class="text-center scroll-reveal bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            class="text-center scroll-reveal theme-surface-soft p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
             style="animation-delay: 0.2s;"
           >
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-amber-500 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              style="background-color: var(--color-primary);"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -194,22 +221,23 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
               </svg>
             </div>
             <h3
-              class="text-3xl font-serif text-amber-800 mb-4"
+              class="text-3xl font-serif theme-text-contrast mb-4"
               style="font-family: 'Cormorant Garamond', serif;"
             >
               Hora
             </h3>
-            <p class="text-5xl font-bold text-amber-600">3:00</p>
-            <p class="text-2xl text-gray-700 mt-2">PM</p>
+            <p class="text-5xl font-bold theme-text-strong">3:00</p>
+            <p class="text-2xl theme-text-muted mt-2">PM</p>
           </div>
 
           <!-- Location -->
           <div
-            class="text-center scroll-reveal bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
+            class="text-center scroll-reveal theme-surface-soft p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
             style="animation-delay: 0.4s;"
           >
             <div
-              class="w-20 h-20 mx-auto mb-6 bg-amber-500 rounded-full flex items-center justify-center"
+              class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center"
+              style="background-color: var(--color-primary);"
             >
               <svg
                 class="w-10 h-10 text-white"
@@ -231,7 +259,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
               </svg>
             </div>
             <h3
-              class="text-3xl font-serif text-amber-800 mb-4"
+              class="text-3xl font-serif theme-text-contrast mb-4"
               style="font-family: 'Cormorant Garamond', serif;"
             >
               Lugar
@@ -246,12 +274,15 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
     </section>
 
     <!-- Dress Code Section -->
-    <section class="py-20 bg-gradient-to-br from-amber-50 to-white relative">
+    <section
+      class="py-20 relative"
+      style="background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface));"
+    >
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto text-center">
           <div class="scroll-reveal">
             <h2
-              class="text-5xl md:text-6xl text-amber-700 mb-12 font-serif"
+              class="text-5xl md:text-6xl theme-text-contrast mb-12 font-serif"
               style="font-family: 'Cormorant Garamond', serif;"
             >
               Sobre la Vestimenta
@@ -260,7 +291,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
             <div class="bg-white p-12 rounded-3xl shadow-xl">
               <div class="flex justify-center mb-8">
                 <svg
-                  class="w-24 h-24 text-amber-500"
+                  class="w-24 h-24 theme-text-primary"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -271,17 +302,18 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
               </div>
 
               <p
-                class="text-3xl text-amber-700 font-serif mb-4"
+                class="text-3xl theme-text-contrast font-serif mb-4"
                 style="font-family: 'Cormorant Garamond', serif;"
               >
                 Por favor, si es posible,
               </p>
-              <p class="text-4xl font-bold text-amber-800 mb-8">
+              <p class="text-4xl font-bold theme-text-contrast mb-8">
                 evita usar el color blanco
               </p>
 
               <div
-                class="w-32 h-1 bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto"
+                class="w-32 h-1 mx-auto"
+                style="background: linear-gradient(to right, transparent, var(--color-primary), transparent);"
               >
               </div>
             </div>
@@ -291,11 +323,11 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
     </section>
 
     <!-- Confirmation Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 theme-surface">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center scroll-reveal">
           <h2
-            class="text-5xl md:text-6xl text-amber-700 mb-8 font-serif"
+            class="text-5xl md:text-6xl theme-text-contrast mb-8 font-serif"
             style="font-family: 'Cormorant Garamond', serif;"
           >
             Confirma tu Asistencia
@@ -307,8 +339,10 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
           </p>
 
           <a
-            href="tel:2331326300"
-            class="inline-block bg-gradient-to-r from-amber-500 to-amber-600 text-white px-12 py-5 rounded-full text-xl font-semibold hover:from-amber-600 hover:to-amber-700 transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            href="https://wa.me/523331326300?text=%C2%A1Hola!%20Quiero%20confirmar%20mi%20asistencia%20a%20tu%20fiesta%20de%20graduaci%C3%B3n%20y%20cumplea%C3%B1os%2C%20Diana%20Laura."
+            class="inline-block theme-button px-12 py-5 rounded-full text-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <svg
               class="inline-block w-6 h-6 mr-3"
@@ -326,10 +360,13 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
     </section>
 
     <!-- Photo Gallery Section -->
-    <section class="py-20 bg-gradient-to-br from-amber-50 to-white">
+    <section
+      class="py-20"
+      style="background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface));"
+    >
       <div class="container mx-auto px-4">
         <h2
-          class="text-5xl md:text-6xl text-center text-amber-700 mb-16 font-serif scroll-reveal"
+          class="text-5xl md:text-6xl text-center theme-text-contrast mb-16 font-serif scroll-reveal"
           style="font-family: 'Cormorant Garamond', serif;"
         >
           Momentos Especiales
@@ -341,28 +378,23 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
             <div
               id="carousel"
               class="flex transition-transform duration-500 ease-out"
+              data-slides={carouselImages.length}
             >
-              <!-- Placeholder images - replace with actual images -->
-              <div
-                class="min-w-full h-96 bg-gradient-to-br from-amber-200 to-amber-400 flex items-center justify-center"
-              >
-                <p class="text-white text-2xl font-serif">Foto 1</p>
-              </div>
-              <div
-                class="min-w-full h-96 bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center"
-              >
-                <p class="text-white text-2xl font-serif">Foto 2</p>
-              </div>
-              <div
-                class="min-w-full h-96 bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center"
-              >
-                <p class="text-white text-2xl font-serif">Foto 3</p>
-              </div>
-              <div
-                class="min-w-full h-96 bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center"
-              >
-                <p class="text-white text-2xl font-serif">Foto 4</p>
-              </div>
+              {
+                carouselImages.map((image, index) => (
+                  <div
+                    class="min-w-full aspect-square relative"
+                    key={`slide-${index}`}
+                  >
+                    <Image
+                      src={image}
+                      alt={`Momento especial ${index + 1}`}
+                      class="w-full h-full object-cover"
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                  </div>
+                ))
+              }
             </div>
           </div>
 
@@ -372,7 +404,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
             class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <svg
-              class="w-6 h-6 text-amber-700"
+              class="w-6 h-6 theme-text-contrast"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -389,7 +421,7 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
             class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <svg
-              class="w-6 h-6 text-amber-700"
+              class="w-6 h-6 theme-text-contrast"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -404,27 +436,22 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
 
           <!-- Carousel indicators -->
           <div class="flex justify-center gap-3 mt-8">
-            <button
-              class="carousel-dot w-3 h-3 rounded-full bg-amber-500 transition-all duration-300"
-            ></button>
-            <button
-              class="carousel-dot w-3 h-3 rounded-full bg-amber-300 transition-all duration-300"
-            ></button>
-            <button
-              class="carousel-dot w-3 h-3 rounded-full bg-amber-300 transition-all duration-300"
-            ></button>
-            <button
-              class="carousel-dot w-3 h-3 rounded-full bg-amber-300 transition-all duration-300"
-            ></button>
+            {
+              carouselImages.map((_, index) => (
+                <button
+                  class={`carousel-dot w-3 h-3 rounded-full ${index === 0 ? "active" : ""}`}
+                  data-index={index}
+                  aria-label={`Ir a la foto ${index + 1}`}
+                />
+              ))
+            }
           </div>
         </div>
       </div>
     </section>
 
     <!-- Final CTA Section -->
-    <section
-      class="py-32 bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 text-white relative overflow-hidden"
-    >
+    <section class="py-32 theme-cta text-white relative overflow-hidden">
       <div
         class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yIDItNCAxLTVzLTQgMC01IDFjLTEgMS0xIDMgMCA0czMgMiA0IDB6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"
       >
@@ -531,18 +558,12 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7];
       const nextBtn = document.getElementById("next");
       const dots = document.querySelectorAll(".carousel-dot");
       let currentIndex = 0;
-      const totalSlides = 4;
+      const totalSlides = parseInt(carousel.dataset.slides || "0", 10);
 
       function updateCarousel() {
         carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
         dots.forEach((dot, index) => {
-          if (index === currentIndex) {
-            dot.classList.remove("bg-amber-300");
-            dot.classList.add("bg-amber-500", "scale-125");
-          } else {
-            dot.classList.remove("bg-amber-500", "scale-125");
-            dot.classList.add("bg-amber-300");
-          }
+          dot.classList.toggle("active", index === currentIndex);
         });
       }
 

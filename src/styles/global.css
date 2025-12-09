@@ -1,1 +1,67 @@
 @import "tailwindcss";
+
+:root {
+  --color-background: #faf7f2;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fef3c7;
+  --color-primary: #f59e0b;
+  --color-primary-strong: #d97706;
+  --color-primary-contrast: #78350f;
+  --color-text: #1f2937;
+  --color-muted: #4b5563;
+  --color-primary-rgb: 245, 158, 11;
+  --color-primary-strong-rgb: 217, 119, 6;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+.theme-background {
+  background-color: var(--color-background);
+}
+
+.theme-surface {
+  background-color: var(--color-surface);
+}
+
+.theme-surface-soft {
+  background: linear-gradient(135deg, var(--color-surface-soft), var(--color-surface));
+}
+
+.theme-text-primary {
+  color: var(--color-primary);
+}
+
+.theme-text-strong {
+  color: var(--color-primary-strong);
+}
+
+.theme-text-contrast {
+  color: var(--color-primary-contrast);
+}
+
+.theme-text-muted {
+  color: var(--color-muted);
+}
+
+.theme-button {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-strong));
+  color: #fff;
+}
+
+.theme-cta {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-strong), var(--color-primary));
+  color: #fff;
+}
+
+.carousel-dot {
+  background-color: var(--color-surface-soft);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: var(--color-primary);
+  transform: scale(1.25);
+}
