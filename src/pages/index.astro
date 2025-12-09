@@ -394,13 +394,13 @@ const carouselImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
               {
                 carouselImages.map((image, index) => (
                   <div
-                    class="min-w-full aspect-square relative"
+                    class="min-w-full aspect-[16/14] relative"
                     key={`slide-${index}`}
                   >
                     <Image
                       src={image}
                       alt={`Momento especial ${index + 1}`}
-                      class="w-full h-full object-cover"
+                      class="size-full object-cover"
                       loading={index === 0 ? "eager" : "lazy"}
                     />
                   </div>
